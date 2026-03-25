@@ -3,13 +3,13 @@
     var ret = $.Deferred();
 
     function onError() {
+      alert('here');
       console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
-        alert('456')
         var patient = smart.patient;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
