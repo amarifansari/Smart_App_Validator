@@ -66,7 +66,6 @@
         onError();
       }
     }
-alert(client)
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
