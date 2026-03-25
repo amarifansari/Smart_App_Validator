@@ -10,10 +10,7 @@
 
     function onReady(smart)  {
       alert('autorize');
-      if (smart.hasOwnProperty('patient')) {
-      } else {
-        onError();
-      }
+      
     }
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
