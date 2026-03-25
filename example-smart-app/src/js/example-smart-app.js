@@ -9,8 +9,8 @@
     }
 
     function onReady(smart)  {
+      alert('autorize');
       if (smart.hasOwnProperty('patient')) {
-        alert('autorize');
       } else {
         onError();
       }
