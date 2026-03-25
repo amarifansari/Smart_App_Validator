@@ -9,6 +9,24 @@
     }
 
     function onReady(smart)  {
+
+    const metadata = await smart.request('metadata');
+    const resources = metadata.rest?.[0]?.resource?.map(r => r.type) || [];
+
+    const results = {};
+
+    for (const resource of resources) {
+      const url = resource + '?_count=5';
+      try {
+        const data = await client.request(url);
+        results[resource] = { success: true, count: data.entry?.length || 0 };
+      } catch (e) {
+        results[resource] = { success: false, error: e.toString() };
+      }
+    }
+
+    document.getElementById('output').textContent = JSON.stringify(results, null, 2);
+      
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
