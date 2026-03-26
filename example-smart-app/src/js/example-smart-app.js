@@ -86,7 +86,7 @@ obi.then(function(data) {
 alert(raw);
 });
          
-         // p.resp = 
+          p.resp = '';
           ret.resolve(p);
         });
       } else {
