@@ -76,20 +76,20 @@
     return ret.promise();
   };
 
-  function defaultPatient(){
-    return {
-      fname: {value: ''},
-      lname: {value: ''},
-      gender: {value: ''},
-      birthdate: {value: ''},
-      height: {value: ''},
-      systolicbp: {value: ''},
-      diastolicbp: {value: ''},
-      ldl: {value: ''},
-      hdl: {value: ''},
-      resp: 'Loading...'
-    };
-  }
+  function defaultPatient() {
+  return {
+    fname: '',
+    lname: '',
+    gender: '',
+    birthdate: '',
+    height: '',
+    systolicbp: '',
+    diastolicbp: '',
+    ldl: '',
+    hdl: '',
+    resp: 'Loading...'
+  };
+}
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
