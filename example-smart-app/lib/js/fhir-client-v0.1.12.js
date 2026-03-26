@@ -17494,11 +17494,12 @@ function FhirClient(p) {
     } else if (server.auth.type === 'bearer') {
         auth = {
             bearer: server.auth.token
+			alert(server.token);
+
         };
     }
 
-	alert(server.auth.username);
-	alert(server.auth.password);
+	
     client.api = fhir({
         baseUrl: server.serviceUrl,
         auth: auth
