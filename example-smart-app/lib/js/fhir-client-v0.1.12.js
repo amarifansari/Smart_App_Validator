@@ -17494,9 +17494,11 @@ function FhirClient(p) {
     } else if (server.auth.type === 'bearer') {
         auth = {
             bearer: server.auth.token
-			alert(server.token);
+		
 
         };
+
+			alert(server.token);
     }
 
 	
