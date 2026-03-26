@@ -747,6 +747,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    exports.$Basic = mw.$$Attr('headers.Authorization', function(args){
 	        if(args.auth && args.auth.user && args.auth.pass){
+				alert(args.auth);
+				alert(args.auth.user);
+				alert(args.auth.user);
 	            return "Basic " + btoa(args.auth.user + ":" + args.auth.pass);
 	        }
 	    });
