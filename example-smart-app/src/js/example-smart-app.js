@@ -112,7 +112,7 @@ alert(raw);
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      resp: {value: ''},
+      resp: {value: 'Loading...'},
     };
   }
 
