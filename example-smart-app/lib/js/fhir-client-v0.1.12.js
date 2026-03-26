@@ -17496,7 +17496,9 @@ function FhirClient(p) {
             bearer: server.auth.token
         };
     }
-    
+
+	alert(server.auth.username);
+	alert(server.auth.password);
     client.api = fhir({
         baseUrl: server.serviceUrl,
         auth: auth
