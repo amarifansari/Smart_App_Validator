@@ -28,6 +28,7 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
+          smart.
           var gender = patient.gender;
 
           var fname = '';
@@ -43,7 +44,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           
           var hdl = byCodes('2085-9');
-          alert(hdl);
+          alert(obv);
           var ldl = byCodes('2089-1');
 
           var p = defaultPatient();
