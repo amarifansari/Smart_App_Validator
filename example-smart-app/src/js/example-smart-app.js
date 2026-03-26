@@ -44,7 +44,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           
           var hdl = byCodes('2085-9');
-          alert(obv);
+          
           var ldl = byCodes('2089-1');
 
           var p = defaultPatient();
@@ -64,7 +64,29 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          p.resp = 
+
+          var obi = smart.patient.api.fetchAll({
+  type: 'Observation',
+  query: {
+    code: {
+      $or: [
+        'http://loinc.org|8302-2',
+        'http://loinc.org|8462-4',
+        'http://loinc.org|8480-6',
+        'http://loinc.org|2085-9',
+        'http://loinc.org|2089-1',
+        'http://loinc.org|55284-4'
+      ]
+    }
+  }
+});
+
+obi.then(function(data) {
+  var raw = JSON.stringify(data);
+alert(raw);
+});
+         
+         // p.resp = 
           ret.resolve(p);
         });
       } else {
