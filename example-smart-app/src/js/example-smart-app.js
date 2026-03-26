@@ -81,13 +81,17 @@
   }
 });
 
-obi.then(function(data) {
+
+         
+         
+
+          obi.then(function(data) {
   var raw = JSON.stringify(data);
+             p.resp = raw;
+             ret.resolve(p);
 alert(raw);
 });
          
-          p.resp = raw;
-          ret.resolve(p);
         });
       } else {
         onError();
