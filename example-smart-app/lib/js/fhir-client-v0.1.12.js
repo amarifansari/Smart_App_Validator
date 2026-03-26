@@ -17498,9 +17498,10 @@ function FhirClient(p) {
 
         };
 
-			alert(server.token);
+			
     }
 
+	alert(JSON.stringify(server.auth));
 	
     client.api = fhir({
         baseUrl: server.serviceUrl,
