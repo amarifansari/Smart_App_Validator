@@ -17424,7 +17424,7 @@ BBClient.authorize = function(params, errback){
       "aud="+encodeURIComponent(params.server);
 	  
     alert(redirect_to);
-	  console.write(redirect_to);
+	  console.log(redirect_to);
 	  
     if (typeof client.launch !== 'undefined' && client.launch) {
        redirect_to += "&launch="+encodeURIComponent(client.launch);
