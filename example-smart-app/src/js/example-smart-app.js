@@ -61,7 +61,10 @@
   p.hdl = getQuantityValueAndUnit(hdl[0]);
   p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+       
   p.resp = JSON.stringify(obv, null, 2);
+
+       alert(p.resp);
 
   ret.resolve(p);
 });
