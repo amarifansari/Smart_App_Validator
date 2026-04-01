@@ -140,6 +140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var Path = url.Path;
 	        var BaseUrl = Path(cfg.baseUrl);
+			alert(BaseUrl);
 	        var resourceTypePath = BaseUrl.slash(":type || :resource.resourceType");
 	        var searchPath = resourceTypePath;
 	        var resourceTypeHxPath = resourceTypePath.slash("_history");
