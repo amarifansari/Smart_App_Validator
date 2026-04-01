@@ -862,23 +862,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function() {
 	    var utils = __webpack_require__(2);
 
-	    exports.Http = function(cfg, adapter){
-	        return function(args){
-	            if(args.debug){
-	                console.log("\nDEBUG (request):", args.method, args.url, args);
-					alert("\nDEBUG (request):");
-					alert(args.method);
-					alert(args.url);
-					alert(args);
-	            }
-	            var promise = (args.http || adapter.http  || cfg.http)(args);
-	            if (args.debug && promise && promise.then){
-	                promise.then(function(x){ console.log("\nDEBUG: (responce)", x);});
-	            }
-	            return promise;
-	        };
-	    };
+	 exports.Http = function(cfg, adapter){
+  return function(args){
 
+    // force method default if missing
+    var method = args.method || "GET";
+    var baseUrl = args.baseUrl || "(no baseUrl)";
+    var url = args.url || "(no url)";
+
+    // build a readable raw request preview
+    var rawRequest =
+      method + " " + url +
+      (args.headers ? "\n\nHeaders:\n" + JSON.stringify(args.headers, null, 2) : "") +
+      (args.data ? "\n\nBody:\n" + (typeof args.data === "string" ? args.data : JSON.stringify(args.data, null, 2)) : "");
+
+    alert("Base URL:\n" + baseUrl);
+    alert("Raw request preview:\n" + rawRequest);
+
+    if(args.debug){
+      console.log("\nDEBUG (request):", method, url, args);
+      alert("\nDEBUG (request):");
+      alert(method);
+      alert(url);
+      alert(JSON.stringify(args, null, 2));
+    }
+
+    var promise = (args.http || adapter.http || cfg.http)(args);
+
+    if (args.debug && promise && promise.then){
+      promise.then(function(x){
+        console.log("\nDEBUG: (response)", x);
+        alert("Response:\n" + JSON.stringify(x, null, 2));
+      });
+    }
+
+    return promise;
+  };
+};
 	    var toJson = function(x){
 	        return (utils.type(x) == 'object') ? JSON.stringify(x) : x;
 	    };
