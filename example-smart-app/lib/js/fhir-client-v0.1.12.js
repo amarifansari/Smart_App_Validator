@@ -858,6 +858,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return function(args){
 	            if(args.debug){
 	                console.log("\nDEBUG (request):", args.method, args.url, args);
+					alert("\nDEBUG (request):");
+					alert(args.method);
+					alert(args.url);
+					alert(args);
 	            }
 	            var promise = (args.http || adapter.http  || cfg.http)(args);
 	            if (args.debug && promise && promise.then){
