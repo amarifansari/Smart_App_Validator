@@ -885,11 +885,9 @@ const url = URL.createObjectURL(blob);
 
 a.href = url;
 a.download = "Request.txt";
-document.body.appendChild(a);
+
 a.click();
-document.body.removeChild(a);
-URL.revokeObjectURL(url);
-   
+
     if(args.debug){
       console.log("\nDEBUG (request):", method, url, args);
       alert("\nDEBUG (request):");
