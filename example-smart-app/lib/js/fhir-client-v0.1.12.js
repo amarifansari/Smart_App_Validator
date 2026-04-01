@@ -881,9 +881,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  
 const blob = new Blob([rawRequest], { type: "text/plain;charset=utf-8" });
 const a = document.createElement("a");
-const url = URL.createObjectURL(blob);
+const urldo = URL.createObjectURL(blob);
 
-a.href = url;
+a.href = urldo;
 a.download = "Request.txt";
 
 a.click();
