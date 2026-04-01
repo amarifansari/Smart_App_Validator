@@ -17550,10 +17550,11 @@ const a = document.createElement("a");
 a.href = URL.createObjectURL(blob);
 a.download = "auth.json";
 a.click();
-	
+	auth = null;
+	   return client;
     client.api = fhir({
         baseUrl: server.serviceUrl,
-        auth: null
+        auth: auth
     });
     
     if (p.patientId) {
