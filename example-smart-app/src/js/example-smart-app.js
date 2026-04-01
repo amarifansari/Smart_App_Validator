@@ -9,7 +9,7 @@
     }
 
     function onReady(smart)  {
-      alert('Updated5');
+      alert('Updated6');
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
