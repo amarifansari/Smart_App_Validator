@@ -17553,7 +17553,7 @@ a.click();
 	
     client.api = fhir({
         baseUrl: server.serviceUrl,
-        auth: auth
+        auth: null
     });
     
     if (p.patientId) {
