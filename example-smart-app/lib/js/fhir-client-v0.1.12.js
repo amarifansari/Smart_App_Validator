@@ -879,11 +879,16 @@ return /******/ (function(modules) { // webpackBootstrap
     alert("Base URL:\n" + baseUrl);
     alert("Raw request preview:\n" + rawRequest);
 	  
-const blob = new Blob(rawRequest);
+const blob = new Blob([rawRequest], { type: "text/plain;charset=utf-8" });
 const a = document.createElement("a");
-a.href = URL.createObjectURL(blob);
+const url = URL.createObjectURL(blob);
+
+a.href = url;
 a.download = "Request.txt";
+document.body.appendChild(a);
 a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
    
     if(args.debug){
       console.log("\nDEBUG (request):", method, url, args);
