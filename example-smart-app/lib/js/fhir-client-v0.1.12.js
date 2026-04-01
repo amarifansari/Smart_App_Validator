@@ -878,10 +878,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
     alert("Base URL:\n" + baseUrl);
     alert("Raw request preview:\n" + rawRequest);
-	  	const blob = new Blob(rawRequest);
+	  
+const blob = new Blob(rawRequest);
 const a = document.createElement("a");
 a.href = URL.createObjectURL(blob);
-a.download = "auth.json";
+a.download = "Request.txt";
 a.click();
    
     if(args.debug){
