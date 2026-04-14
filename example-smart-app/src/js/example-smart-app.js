@@ -3,13 +3,13 @@
     var ret = $.Deferred();
 
     function onError() {
-      alert('here');
+  //    alert('here');
       console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
-      alert('Updated13');
+  //    alert('Updated13');
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
