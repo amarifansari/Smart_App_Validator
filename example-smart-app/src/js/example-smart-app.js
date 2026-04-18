@@ -3,13 +3,10 @@
     var ret = $.Deferred();
 
     function onError() {
-      alert('here');
-      console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
-      alert('Updated13');
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -29,7 +26,6 @@
      $.when(pt, obv).done(function(patient, obv) {
   var byCodes = smart.byCodes(obv, 'code');
 
-  var gender = patient.gender;
   var fname = '';
   var lname = '';
 
@@ -60,12 +56,6 @@
 
   p.hdl = getQuantityValueAndUnit(hdl[0]);
   p.ldl = getQuantityValueAndUnit(ldl[0]);
-
-       
-  p.resp = JSON.stringify(obv, null, 2);
-
-       alert(p.resp);
-
   ret.resolve(p);
 });
       } else {
@@ -131,7 +121,6 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#resp').text(p.resp);
   };
 
 })(window);
